@@ -202,6 +202,7 @@ class CommonLib(object):
     def set_parallel(self, parallel_num):
         """ """
         sql = "set global parallel_fragment_exec_instance_num = %s" % parallel_num
+        sql = "set global parallel_pipeline_task_num = %s" % parallel_num
         return self.execute_sql(sql, "ddl")
 
     def get_parallel_cmd(self, query_dict):
